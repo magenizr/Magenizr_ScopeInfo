@@ -1,0 +1,59 @@
+<?php $id = uniqid(); ?>
+<?php $lines = $block->getLines($block->getData('subject')); ?>
+<?php $displayOptions = (!$block->getConfigFlag('display_options')); ?>
+
+<?php if (count($lines)): ?>
+    <div class="magenizr-scopeconfig-info">
+        <?php if ($displayOptions) { ?>
+            <a class="a-<?=$block->escapeHtml($id);?>"
+               src="javascript:void();"><?=$block->escapeHtml(__('Display Scope Info (%1)', count($lines)));?>
+            </a>
+        <?php }; ?>
+        <div class="d-<?=$block->escapeHtml($id);?> container <?=(! $displayOptions) ? 'show' : '';?>">
+            <ul>
+                <?php
+
+                if (is_array($lines)) {
+
+                    foreach ($lines as $line) {
+
+                        $output = '';
+                        $type = key($line);
+                        $section = $line[$type]['section'];
+                        $scopeId = $line[$type]['scope_id'];
+                        $code = $line[$type]['code'];
+                        $value = $line[$type]['value'];
+                        $scope = rtrim($type, 's');
+
+                        $url = $block->getUrl('*/*/*', [
+                            'section' => $section,
+                            $scope => $scopeId,
+                        ]);
+                        // @codingStandardsIgnoreStart
+                        $output = __('<a href="%3"><span class="title">%1 > %2:</span></a>%4', ucwords($scope), $code, $url, $value);
+
+                        echo __('<li>%1</li>', $output);
+                        // @codingStandardsIgnoreEnd
+                    }
+                }
+
+                ?>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.a-<?= $block->escapeHtml($id); ?>').addEventListener('click', function (e) {
+                [].map.call(document.querySelectorAll('.d-<?= $block->escapeHtml($id); ?>'), function (el) {
+                    el.classList.toggle('show');
+                });
+            });
+        });
+
+    </script>
+
+<?php else: ?>
+    <?=$block->getData('result') // @codingStandardsIgnoreLine?>
+<?php endif; ?>

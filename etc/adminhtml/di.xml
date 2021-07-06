@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magenizr ScopeInfo
+ *
+ * @category    Magenizr
+ * @package     Magenizr_ScopeInfo
+ * @copyright   Copyright (c) 2021 Magenizr (https://www.magenizr.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Config\Model\Config\Structure\Element\Field">
+        <plugin name="magenizr_scopeinfo_block_system_config_form_field"
+                type="Magenizr\ScopeInfo\Plugin\Framework\Data\Form\Element\Field" sortOrder="10"/>
+    </type>
+</config>
+
