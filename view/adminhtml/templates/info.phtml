@@ -3,6 +3,7 @@
 <?php $displayOptions = (!$block->getConfigFlag('display_options')); ?>
 
 <?php if (count($lines)): ?>
+    <?=$block->getData('result') // @codingStandardsIgnoreLine?>
     <div class="magenizr-scopeconfig-info">
         <?php if ($displayOptions) { ?>
             <a class="a-<?=$block->escapeHtml($id);?>"
