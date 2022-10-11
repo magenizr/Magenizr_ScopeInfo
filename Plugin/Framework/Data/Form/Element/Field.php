@@ -46,18 +46,23 @@ class Field
      */
     public function afterGetComment(Subject $subject, $result)
     {
-        if (!$this->dataHelper->isEnabled()) {
+        try {
+            if (!$this->dataHelper->isEnabled()) {
+                return $result;
+            }
+            $block = $this->layoutFactory->create()
+                ->createBlock(\Magenizr\ScopeInfo\Block\System\Config\Info::class)
+                ->setTemplate('Magenizr_ScopeInfo::info.phtml')
+                ->setBlockId('magenizr_scopeinfo_system_config_info')
+                ->setData('subject', $subject)
+                ->setData('result', $result)
+                ->toHtml();
+            if($result instanceof \Magento\Framework\Phrase) {
+                return __($block);
+            };
+            return $block;
+        } catch (\Exception $e) {
             return $result;
         }
-
-        $block = $this->layoutFactory->create()
-            ->createBlock(\Magenizr\ScopeInfo\Block\System\Config\Info::class)
-            ->setTemplate('Magenizr_ScopeInfo::info.phtml')
-            ->setBlockId('magenizr_scopeinfo_system_config_info')
-            ->setData('subject', $subject)
-            ->setData('result', $result)
-            ->toHtml();
-
-        return $block;
     }
 }
