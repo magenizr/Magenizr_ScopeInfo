@@ -1,10 +1,7 @@
 <?php
 /**
  * Magenizr ScopeInfo
- *
- * @category    Magenizr
- * @package     Magenizr_ScopeInfo
- * @copyright   Copyright (c) 2021 Magenizr (https://www.magenizr.com)
+ * @copyright   Copyright (c) 2018 - 2022 Magenizr (https://www.magenizr.com)
  * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
 
@@ -20,13 +17,19 @@ use Magenizr\ScopeInfo\Helper\Data as DataHelper;
 
 class Info extends \Magento\Backend\Block\Template
 {
-    const SCOPE_TYPE_WEBSITES = 'websites';
-    const SCOPE_TYPE_STORES = 'stores';
+    private const SCOPE_TYPE_WEBSITES = 'websites';
+    private const SCOPE_TYPE_STORES = 'stores';
 
     /**
-     * Info constructor.
+     * Init Constructor
      *
      * @param \Magento\Backend\Block\Template\Context $context
+     * @param ScopeConfigInterface $scopeConfig
+     * @param WebsiteRepositoryInterface $websiteRepository
+     * @param StoreRepositoryInterface $storeRepository
+     * @param RequestInterface $request
+     * @param LayoutFactory $layoutFactory
+     * @param DataHelper $dataHelper
      * @param array $data
      */
     public function __construct(
@@ -48,6 +51,12 @@ class Info extends \Magento\Backend\Block\Template
         parent::__construct($context, $data);
     }
 
+    /**
+     * Get Lines
+     *
+     * @param Subject $subject
+     * @return array
+     */
     public function getLines(Subject $subject)
     {
         $lines = [];
@@ -71,6 +80,8 @@ class Info extends \Magento\Backend\Block\Template
     }
 
     /**
+     * Get Path
+     *
      * @param Subject $subject
      * @return string
      */
@@ -80,6 +91,8 @@ class Info extends \Magento\Backend\Block\Template
     }
 
     /**
+     * Check for selected Website
+     *
      * @param WebsiteInterface $website
      * @return bool
      */
@@ -89,6 +102,8 @@ class Info extends \Magento\Backend\Block\Template
     }
 
     /**
+     * Check for selected Store
+     *
      * @param StoreInterface $store
      * @return bool
      */
@@ -98,6 +113,8 @@ class Info extends \Magento\Backend\Block\Template
     }
 
     /**
+     * Get Scope Info
+     *
      * @param string $path
      * @param string $scopeType
      * @param WebsiteInterface|StoreInterface $scope
@@ -123,6 +140,12 @@ class Info extends \Magento\Backend\Block\Template
         return $scopeLine;
     }
 
+    /**
+     * Get Config Flag
+     *
+     * @param string $path
+     * @return mixed
+     */
     public function getConfigFlag($path)
     {
         return $this->dataHelper->getConfigFlag($path);

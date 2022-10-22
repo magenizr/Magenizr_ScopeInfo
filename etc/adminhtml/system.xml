@@ -2,10 +2,7 @@
 <!--
 /**
  * Magenizr ScopeInfo
- *
- * @category    Magenizr
- * @package     Magenizr_ScopeInfo
- * @copyright   Copyright (c) 2021 Magenizr (https://www.magenizr.com)
+ * @copyright   Copyright (c) 2018 - 2022 Magenizr (https://www.magenizr.com)
  * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
 -->
@@ -13,8 +10,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="system" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
-            <group id="magenizr_scopeinfo" translate="label" type="text" sortOrder="10" showInDefault="1"
+        <section id="system" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="magenizr_scopeinfo" translate="label" type="text" sortOrder="1000" showInDefault="1"
                    showInWebsite="1" showInStore="1">
                 <label>Scope Info</label>
                 <field id="enabled" translate="label,comment" type="select" sortOrder="10" showInDefault="1"

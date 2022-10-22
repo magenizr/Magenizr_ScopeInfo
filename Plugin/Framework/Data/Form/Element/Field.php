@@ -26,7 +26,7 @@ class Field
     protected $dataHelper;
 
     /**
-     * Field constructor.
+     * Init Constructor
      *
      * @param \Magenizr\ScopeInfo\Helper\Data $dataHelper
      * @param \Magento\Framework\View\LayoutFactory $layoutFactory
@@ -40,6 +40,8 @@ class Field
     }
 
     /**
+     * Init Plugin
+     *
      * @param Subject $subject
      * @param string $result
      * @return string
@@ -47,9 +49,11 @@ class Field
     public function afterGetComment(Subject $subject, $result)
     {
         try {
+
             if (!$this->dataHelper->isEnabled()) {
                 return $result;
             }
+
             $block = $this->layoutFactory->create()
                 ->createBlock(\Magenizr\ScopeInfo\Block\System\Config\Info::class)
                 ->setTemplate('Magenizr_ScopeInfo::info.phtml')
@@ -57,7 +61,7 @@ class Field
                 ->setData('subject', $subject)
                 ->setData('result', $result)
                 ->toHtml();
-            if($result instanceof \Magento\Framework\Phrase) {
+            if ($result instanceof \Magento\Framework\Phrase) {
                 return __($block);
             };
             return $block;

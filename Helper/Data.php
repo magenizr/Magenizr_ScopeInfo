@@ -14,7 +14,7 @@ use Magento\Store\Model\ScopeInterface;
 
 class Data extends AbstractHelper
 {
-    const SCOPE_PATH = 'system/magenizr_scopeinfo';
+    private const SCOPE_PATH = 'system/magenizr_scopeinfo';
 
     /**
      * Check if module is enabled
@@ -29,7 +29,7 @@ class Data extends AbstractHelper
     /**
      * Get module flags from core_config_data
      *
-     * @param $path
+     * @param string $path
      * @return mixed
      */
     public function getConfigFlag($path)
@@ -40,7 +40,7 @@ class Data extends AbstractHelper
     /**
      * Get module configuration values from core_config_data
      *
-     * @param $path
+     * @param string $path
      * @return mixed
      */
     public function getConfig($path)

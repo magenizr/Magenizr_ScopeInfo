@@ -1,15 +1,15 @@
 {
     "name": "magenizr/magento2-scopeinfo",
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "OSL-3.0",
-    "description": "This module provides you a list of changes from `core_config_data` whenever a value is overwritten in a lower scope.",
+    "description": "This module provides you a list of changes from `core_config_data` whenever a value is overridden in a lower scope.",
     "keywords": [
         "Magento 2",
         "Core Config Data",
         "Environment",
         "Scopes",
-        "Overritten"
+        "Overridden"
     ],
     "autoload": {
         "files": [
