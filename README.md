@@ -1,3 +1,6 @@
+[![Magenizr Plus](https://images2.imgbox.com/11/6b/yVOOloaA_o.gif)](https://account.magenizr.com)
+---
+
 # Scope Info
 This module provides you a list of changes from `core_config_data` whenever a value is overridden in a lower scope.
 
@@ -6,27 +9,6 @@ This module provides you a list of changes from `core_config_data` whenever a va
 ## System Requirements
 - Magento 2.3.x, 2.4.x
 - PHP 5.6.x, 7.x
-
-## Installation (Composer)
-
-1. Update your composer.json `composer require "magenizr/magento2-scopeinfo":"1.0.1" --no-update`
-2. Install dependencies and update your composer.lock `composer update --lock`
-
-```
-./composer.json has been updated
-Loading composer repositories with package information
-Updating dependencies (including require-dev)              
-Package operations: 1 install, 0 updates, 0 removals
-  - Installing magenizr/magento2-scopeinfo (1.0.1): Downloading (100%)         
-Writing lock file
-Generating autoload files
-```
-
-3. Enable the module and clear static content.
-
-```
-php bin/magento module:enable Magenizr_ScopeInfo --clear-static-content
-```
 
 ## Installation (Composer 2)
 
@@ -72,7 +54,7 @@ php bin/magento module:enable Magenizr_ScopeInfo --clear-static-content
 Simply go to `Stores > Configuration > Advanced > System > Scope Info`, enable the module and clear the cache.
 
 ## Support
-If you experience any issues, don't hesitate to open an issue on [Github](https://github.com/magenizr/Magenizr_ScopeInfo/issues). For a custom build, don't hesitate to contact us on [Magento Marketplace](https://marketplace.magento.com/partner/magenizr).
+If you experience any issues, don't hesitate to open an issue on [Github](https://github.com/magenizr/Magenizr_ScopeInfo/issues).
 
 ## Purchase
 This module is available for free on [GitHub](https://github.com/magenizr).
