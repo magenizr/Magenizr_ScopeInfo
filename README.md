@@ -1,14 +1,17 @@
 [![Magenizr Plus](https://images2.imgbox.com/11/6b/yVOOloaA_o.gif)](https://account.magenizr.com)
 ---
 
+[![Latest Stable Version](http://poser.pugx.org/magenizr/magento2-scopeinfo/v)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![Total Downloads](http://poser.pugx.org/magenizr/magento2-scopeinfo/downloads)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![Latest Unstable Version](http://poser.pugx.org/magenizr/magento2-scopeinfo/v/unstable)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![License](http://poser.pugx.org/magenizr/magento2-scopeinfo/license)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![PHP Version Require](http://poser.pugx.org/magenizr/magento2-scopeinfo/require/php)](https://packagist.org/packages/magenizr/magento2-scopeinfo)
+
 # Scope Info
 This module provides you a list of changes from `core_config_data` whenever a value is overridden in a lower scope.
 
-![Magenizr ScopeInfo - Backend](https://images2.imgbox.com/63/6a/LsaFuPb0_o.png)
+![Magenizr ScopeInfo - Backend](https://images2.imgbox.com/f2/5c/6KJVWLVR_o.png)
+![Magenizr ScopeInfo - Backend](https://images2.imgbox.com/a3/3d/zveptDvr_o.png)
 
 ## System Requirements
 - Magento 2.3.x, 2.4.x
-- PHP 5.6.x, 7.x
+- PHP 7.x, 8.1
 
 ## Installation (Composer 2)
 
