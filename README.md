@@ -59,9 +59,6 @@ Simply go to `Stores > Configuration > Advanced > System > Scope Info`, enable t
 ## Support
 If you experience any issues, don't hesitate to open an issue on [Github](https://github.com/magenizr/Magenizr_ScopeInfo/issues).
 
-## Purchase
-This module is available for free on [GitHub](https://github.com/magenizr).
-
 ## Contact
 Follow us on [GitHub](https://github.com/magenizr), [Twitter](https://twitter.com/magenizr) and [Facebook](https://www.facebook.com/magenizr).
 
