@@ -3,7 +3,7 @@
 <?php $displayOptions = (!$block->getConfigFlag('display_options')); ?>
 
 <?php if (count($lines)): ?>
-    <?=$block->getData('result') // @codingStandardsIgnoreLine?>
+    <?= $block->getData('result') // @codingStandardsIgnoreLine ?>
     <div class="magenizr-scopeconfig-info">
         <?php if ($displayOptions) { ?>
             <a class="a-<?=$block->escapeHtml($id);?>"
@@ -43,18 +43,17 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector('.a-<?= $block->escapeHtml($id); ?>').addEventListener('click', function (e) {
-                [].map.call(document.querySelectorAll('.d-<?= $block->escapeHtml($id); ?>'), function (el) {
-                    el.classList.toggle('show');
+    <?php if ($displayOptions): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelector('.a-<?= $block->escapeHtml($id); ?>').addEventListener('click', function (e) {
+                    [].map.call(document.querySelectorAll('.d-<?= $block->escapeHtml($id); ?>'), function (el) {
+                        el.classList.toggle('show');
+                    });
                 });
             });
-        });
-
-    </script>
-
+        </script>
+    <?php endif; ?>
 <?php else: ?>
     <?=$block->getData('result') // @codingStandardsIgnoreLine?>
 <?php endif; ?>
