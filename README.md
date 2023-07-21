@@ -15,13 +15,13 @@ This module provides you a list of changes from `core_config_data` whenever a va
 
 ## Installation (Composer 2)
 
-1. Update your composer.json `composer require "magenizr/magento2-scopeinfo":"1.0.1" --no-update`
+1. Update your composer.json `composer require "magenizr/magento2-scopeinfo":"1.0.2" --no-update`
 2. Use `composer update magenizr/magento2-scopeinfo --no-install` to update your composer.lock file.
 
 ```
 Updating dependencies
 Lock file operations: 1 install, 1 update, 0 removals
-  - Locking magenizr/magento2-scopeinfo (1.0.1)
+  - Locking magenizr/magento2-scopeinfo (1.0.2)
 ```
 
 3. And then `composer install` to install the package.
@@ -30,7 +30,7 @@ Lock file operations: 1 install, 1 update, 0 removals
 Installing dependencies from lock file (including require-dev)
 Verifying lock file contents can be installed on current platform.
 Package operations: 1 install, 0 update, 0 removals
-  - Installing magenizr/magento2-scopeinfo (1.0.1): Extracting archive
+  - Installing magenizr/magento2-scopeinfo (1.0.2): Extracting archive
 ```
 
 4. Enable the module and clear static content.
@@ -41,7 +41,7 @@ php bin/magento module:enable Magenizr_ScopeInfo --clear-static-content
 
 ## Installation (Manually)
 1. Download the code.
-2. Extract the downloaded tar.gz file. Example: `tar -xzf Magenizr_ScopeInfo_1.0.1.tar.gz`.
+2. Extract the downloaded tar.gz file. Example: `tar -xzf Magenizr_ScopeInfo_1.0.2.tar.gz`.
 3. Copy the code into `./app/code/Magenizr/ScopeInfo/`.
 4. Enable the module and clear static content.
 
@@ -63,6 +63,9 @@ If you experience any issues, don't hesitate to open an issue on [Github](https:
 Follow us on [GitHub](https://github.com/magenizr), [Twitter](https://twitter.com/magenizr) and [Facebook](https://www.facebook.com/magenizr).
 
 ## History
+===== 1.0.2 =====
+* Fix JS error `Cannot read properties of null` on Payment and Shipment configuration page
+
 ===== 1.0.1 =====
 * Cleanup various files to meet coding standards (EQP, ECG)
 * Don't remove default comments and optimize compatibility [#1](https://github.com/magenizr/Magenizr_ScopeInfo/pull/1)
