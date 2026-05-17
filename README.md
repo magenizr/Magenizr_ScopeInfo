@@ -1,5 +1,3 @@
----
-
 [![Latest Stable Version](https://poser.pugx.org/magenizr/magento2-scopeinfo/v)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![Total Downloads](https://poser.pugx.org/magenizr/magento2-scopeinfo/downloads)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![Latest Unstable Version](https://poser.pugx.org/magenizr/magento2-scopeinfo/v/unstable)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![License](https://poser.pugx.org/magenizr/magento2-scopeinfo/license)](https://packagist.org/packages/magenizr/magento2-scopeinfo) [![PHP Version Require](https://poser.pugx.org/magenizr/magento2-scopeinfo/require/php)](https://packagist.org/packages/magenizr/magento2-scopeinfo)
 
 # Scope Info
