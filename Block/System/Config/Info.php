@@ -1,7 +1,7 @@
 <?php
 /**
  * Magenizr ScopeInfo
- * @copyright   Copyright (c) 2018 - 2022 Magenizr (https://www.magenizr.com)
+ * @copyright   Copyright (c) 2018 - 2022 Magenizr (https://magenizr.com.au)
  * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
 
@@ -10,7 +10,6 @@ namespace Magenizr\ScopeInfo\Block\System\Config;
 use Magento\Config\Model\Config\Structure\Element\Field as Subject;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\RequestInterface;
-use Magento\Framework\View\LayoutFactory;
 use Magento\Store\Api\StoreRepositoryInterface;
 use Magento\Store\Api\WebsiteRepositoryInterface;
 use Magenizr\ScopeInfo\Helper\Data as DataHelper;
@@ -21,6 +20,31 @@ class Info extends \Magento\Backend\Block\Template
     private const SCOPE_TYPE_STORES = 'stores';
 
     /**
+     * @var ScopeConfigInterface
+     */
+    private $scopeConfig;
+
+    /**
+     * @var WebsiteRepositoryInterface
+     */
+    private $websiteRepository;
+
+    /**
+     * @var StoreRepositoryInterface
+     */
+    private $storeRepository;
+
+    /**
+     * @var RequestInterface
+     */
+    private $request;
+
+    /**
+     * @var DataHelper
+     */
+    private $dataHelper;
+
+    /**
      * Init Constructor
      *
      * @param \Magento\Backend\Block\Template\Context $context
@@ -28,7 +52,6 @@ class Info extends \Magento\Backend\Block\Template
      * @param WebsiteRepositoryInterface $websiteRepository
      * @param StoreRepositoryInterface $storeRepository
      * @param RequestInterface $request
-     * @param LayoutFactory $layoutFactory
      * @param DataHelper $dataHelper
      * @param array $data
      */
@@ -38,7 +61,6 @@ class Info extends \Magento\Backend\Block\Template
         WebsiteRepositoryInterface $websiteRepository,
         StoreRepositoryInterface $storeRepository,
         RequestInterface $request,
-        LayoutFactory $layoutFactory,
         DataHelper $dataHelper,
         array $data = []
     ) {
@@ -87,7 +109,7 @@ class Info extends \Magento\Backend\Block\Template
      */
     private function getPath(Subject $subject)
     {
-        return $path = $subject->getConfigPath() ?: $subject->getPath();
+        return $subject->getConfigPath() ?: $subject->getPath();
     }
 
     /**

@@ -6,8 +6,7 @@
     <?= $block->getData('result') // @codingStandardsIgnoreLine ?>
     <div class="magenizr-scopeconfig-info">
         <?php if ($displayOptions) { ?>
-            <a class="a-<?=$block->escapeHtml($id);?>"
-               src="javascript:void();"><?=$block->escapeHtml(__('Display Scope Info (%1)', count($lines)));?>
+            <a class="a-<?=$block->escapeHtml($id);?>"><?=$block->escapeHtml(__('Display Scope Info (%1)', count($lines)));?>
             </a>
         <?php }; ?>
         <div class="d-<?=$block->escapeHtml($id);?> container <?=(! $displayOptions) ? 'show' : '';?>">
@@ -26,12 +25,18 @@
                         $value = $line[$type]['value'];
                         $scope = rtrim($type, 's');
 
-                        $url = $block->getUrl('*/*/*', [
+                        $url = $block->escapeUrl($block->getUrl('*/*/*', [
                             'section' => $section,
                             $scope => $scopeId,
-                        ]);
+                        ]));
                         // @codingStandardsIgnoreStart
-                        $output = __('<a href="%3"><span class="title">%1 > %2:</span></a>%4', ucwords($scope), $code, $url, $value);
+                        $output = __(
+                            '<a href="%3"><span class="title">%1 > %2:</span></a>%4',
+                            ucwords($scope),
+                            $block->escapeHtml($code),
+                            $url,
+                            $block->escapeHtml($value)
+                        );
 
                         echo __('<li>%1</li>', $output);
                         // @codingStandardsIgnoreEnd

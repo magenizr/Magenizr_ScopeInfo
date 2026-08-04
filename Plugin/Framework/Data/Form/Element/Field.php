@@ -3,7 +3,7 @@
  * Magenizr ScopeInfo
  *
  * @category    Magenizr
- * @copyright   Copyright (c) 2021 Magenizr (https://www.magenizr.com)
+ * @copyright   Copyright (c) 2021 Magenizr (https://magenizr.com.au)
  * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
 
@@ -61,9 +61,7 @@ class Field
                 ->setData('subject', $subject)
                 ->setData('result', $result)
                 ->toHtml();
-            if ($result instanceof \Magento\Framework\Phrase) {
-                return __($block);
-            };
+
             return $block;
         } catch (\Exception $e) {
             return $result;
