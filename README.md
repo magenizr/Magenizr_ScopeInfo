@@ -8,7 +8,7 @@ This module provides you a list of changes from `core_config_data` whenever a va
 
 ## System Requirements
 - Magento 2.3.x, 2.4.x
-- PHP 7.x, 8.x
+- PHP 7.4, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5
 
 ## Installation (Composer 2)
 
@@ -18,7 +18,7 @@ This module provides you a list of changes from `core_config_data` whenever a va
 ```
 Updating dependencies
 Lock file operations: 1 install, 1 update, 0 removals
-  - Locking magenizr/magento2-scopeinfo (1.1.0)
+  - Locking magenizr/magento2-scopeinfo (1.1.1)
 ```
 
 3. And then `composer install` to install the package.
@@ -27,7 +27,7 @@ Lock file operations: 1 install, 1 update, 0 removals
 Installing dependencies from lock file (including require-dev)
 Verifying lock file contents can be installed on current platform.
 Package operations: 1 install, 0 update, 0 removals
-  - Installing magenizr/magento2-scopeinfo (1.1.0): Extracting archive
+  - Installing magenizr/magento2-scopeinfo (1.1.1): Extracting archive
 ```
 
 4. Enable the module and clear static content.
@@ -38,7 +38,7 @@ php bin/magento module:enable Magenizr_ScopeInfo --clear-static-content
 
 ## Installation (Manually)
 1. Download the code.
-2. Extract the downloaded tar.gz file. Example: `tar -xzf Magenizr_ScopeInfo_1.1.0.tar.gz`.
+2. Extract the downloaded tar.gz file. Example: `tar -xzf Magenizr_ScopeInfo_1.1.1.tar.gz`.
 3. Copy the code into `./app/code/Magenizr/ScopeInfo/`.
 4. Enable the module and clear static content.
 
@@ -57,6 +57,9 @@ Simply go to `Stores > Configuration > Advanced > System > Scope Info`, enable t
 If you experience any issues, don't hesitate to open an issue on [Github](https://github.com/magenizr/Magenizr_ScopeInfo/issues).
 
 ## History
+===== 1.1.1 =====
+* Allow PHP 8.4 and 8.5 in composer.json
+
 ===== 1.1.0 =====
 * Fix default config path so the module is enabled out of the box (defaults were nested under an unused `general` node)
 * PHP 8.x compatibility: declare all block properties, remove unused LayoutFactory dependency
